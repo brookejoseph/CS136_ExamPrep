@@ -9,7 +9,7 @@ int front(struct queue *q){
 
 void enqueue(struct queue *q, int val){
     q->len++;
-    q->data = malloc(sizeof(int) * (q->len));
+    q->data = realloc(q->data, sizeof(int) * (q->len));
     assert(q->data);
     q->data[q->len - 1] = val;
 }
